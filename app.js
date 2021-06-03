@@ -11,7 +11,7 @@ const YOUR_PASSWORD, YOUR_USERNAME;
   await page.waitForSelector('form>div>div:nth-child(3)>button')
   await page.click('form>div>div:nth-child(3)>button')
   await page.waitFor(10000)
-  var searchUser = "_niku_419"
+  var searchUser = "hakku_194"
   await page.goto('https://www.instagram.com/'+searchUser,{waitUntil:"networkidle2"})
   await page.waitFor(10000)
   try{
