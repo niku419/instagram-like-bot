@@ -1,12 +1,13 @@
 const puppeteer = require('puppeteer');
+const YOUR_PASSWORD, YOUR_USERNAME;
 (async () => {
   try{
     const browser = await puppeteer.launch({headless:false, slowMo:10});
   const page = await browser.newPage();
   await page.goto('https://www.instagram.com',{waitUntil :"networkidle2"});
   await page.waitFor(1000)
-  await page.type('input[name="username"]',"supernicky659@gmail.com",{delay:500})
-  await page.type('input[name="password"]',"9438002199",{delay:500})
+  await page.type('input[name="username"]',YOUR_USERNAME,{delay:500})
+  await page.type('input[name="password"]',YOUR_PASSWORD,{delay:500})
   await page.waitForSelector('form>div>div:nth-child(3)>button')
   await page.click('form>div>div:nth-child(3)>button')
   await page.waitFor(10000)
