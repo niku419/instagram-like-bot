@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const YOUR_PASSWORD, YOUR_USERNAME;
+const YOUR_PASSWORD, YOUR_USERNAME, USER_TO_LIKE;
 (async () => {
   try{
     const browser = await puppeteer.launch({headless:false, slowMo:10});
@@ -11,7 +11,7 @@ const YOUR_PASSWORD, YOUR_USERNAME;
   await page.waitForSelector('form>div>div:nth-child(3)>button')
   await page.click('form>div>div:nth-child(3)>button')
   await page.waitFor(10000)
-  var searchUser = "hakku_194"
+  var searchUser = USER_TO_LIKE
   await page.goto('https://www.instagram.com/'+searchUser,{waitUntil:"networkidle2"})
   await page.waitFor(10000)
   try{
